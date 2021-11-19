@@ -1,0 +1,47 @@
+/* body */
+body {
+  padding: 15px;
+  background-color: white;
+  font: Belleza;
+}
+
+/* footer */
+footer {
+  background-color: #53565A;
+  color: white;
+  margin-top: 10px;
+}
+
+footer p {
+  margin-top: 0.em!important;
+  margin-left: 1.5em;
+}
+
+/* main */
+.main {
+  background-color: white;
+  color: black;
+  height: 100%;
+}
+
+.mainDiv {
+  margin: auto;
+  width: 90%;
+  padding: 5px;
+}
+
+/* header */
+.header {
+  margin-top: 0.5em!important;
+  text-align: center;
+  background-color: #53565A;
+  color: white;
+}
+
+.header a {
+  color: white;
+}
+
+.header p {
+  margin-top: 0.8em!important;
+}
