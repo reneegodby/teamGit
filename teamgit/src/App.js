@@ -4,9 +4,8 @@ import {Container, Row, Col} from 'reactstrap';
 import Footer from './components/site/Footer';
 import Header from './components/site/Header';
 import NasaApi  from './components/site/Apps/NASA/NasaApi';
+import WeatherApi from './components/site/Apps/Weather/WeatherApi';
 import { useEffect, useState } from 'react';
-
-
 
 import logo from './logo.svg';
 import './App.css';
@@ -56,6 +55,7 @@ function App() {
           <Col>
           <h2>Weather API</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3><WeatherApi/></h3>
           </Col>
           <Col>
           <h2>NASA API</h2>
