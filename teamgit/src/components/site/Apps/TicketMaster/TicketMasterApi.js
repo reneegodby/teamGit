@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
 
 let baseUrl = 'https://app.ticketmaster.com/discovery/v2/attractions';
