@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Button} from 'reactstrap';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Img = styled.img`
 height: 150px;
