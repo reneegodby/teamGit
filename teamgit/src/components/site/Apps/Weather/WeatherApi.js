@@ -16,29 +16,34 @@ const WeatherApi = (props) => {
     const [cloudy, setCloudy] = useState('');
     const [humidity, setHumidity] = useState('');
     const [name, setName] = useState('');
+    const [unit, setUnit] = useState(true);
+    
 
     const fetchWeather = () => {
-        let url = `${baseUrl}?lat=${props.lat}&lon=${props.lon}&appid=${key}`;
+        let url = `${baseUrl}?lat=${props.lat}&lon=${props.lon}&units=imperial&appid=${key}`;
 
         fetch (url)
             .then(res => res.json())
             .then(data => {
                 setDescription(data.weather[0].description);
-                setTemp(data.main.temp);
+                setTemp(Math.floor(data.main.temp));//fahrenheit
                 setCloudy(data.clouds.all);
                 setHumidity(data.main.humidity);
                 setName(data.name);
                 console.log(data);
+
             })
             .catch(err => console.log(err));
     }
+
+    const toggle = () => setUnit(unit => !unit);
 
     return(
         <div>
             <Header>Weather in {name}</Header>
             <Button onClick={fetchWeather}>fetch Weather</Button>
             <hr />
-            <Row><h6>Temperature: {temp}</h6></Row>
+            <Row><h6>Temperature: {unit ? Math.round(temp) : Math.round((temp - 32) / 1.8)}° <Button onClick={toggle}>Convert</Button></h6></Row>
             <hr />
             <Row><h6>Humidity: {humidity}%</h6></Row>
             <hr />
