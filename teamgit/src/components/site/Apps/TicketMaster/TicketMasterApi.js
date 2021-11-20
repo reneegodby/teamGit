@@ -29,8 +29,17 @@ const TicketMasterApi = (props) => {
     }, [])
 
     return (
-        <div>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <h1>TicketMaster</h1>
+            <hr />
+            <h2>Sports Events</h2>
+            <h2>{results.name}</h2>
+            <hr />
+            <h2>Concert Events</h2>
+            <h2>{results.name}</h2>
+            <hr />
+            <h2>Theater Events</h2>
+            <h2>{results.name}</h2>
             <hr />
             <Button onClick={fetchResults}>Search</Button>
             <hr />
