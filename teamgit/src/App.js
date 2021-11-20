@@ -6,7 +6,7 @@ import {Container, Row, Col} from 'reactstrap';
 import Footer from './components/site/Footer';
 import Header from './components/site/Header';
 import NasaApi  from './components/site/Apps/NASA/NasaApi';
-
+import TicketMaster from './components/site/Apps/TicketMaster/TicketMasterApi';
 function App() {
   return (
     <div className="App">
