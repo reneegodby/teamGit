@@ -6,12 +6,43 @@ import {Container, Row, Col} from 'reactstrap';
 import Footer from './components/site/Footer';
 import Header from './components/site/Header';
 import NasaApi  from './components/site/Apps/NASA/NasaApi';
+import { useState } from 'react';
+
+
 
 function App() {
+  const [lat, setLat] = useState(null);
+  const [lon, setLon] = useState(null);
+  const [status, setStatus] = useState(null);
+
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setStatus('Geolocation is not supported by your browser');
+    } else {
+      setStatus('Locating...');
+      navigator.geolocation.getCurrentPosition((position) => {
+        
+        setStatus(null);
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+      }, () => {
+        setStatus('Unable to retrieve your location');
+      });
+    }
+  }
+  // This function gets the user’s current position and accepts 3 parameters; a success callback function, an error callback function, and a position options object. Only using the callback function. 
+
   return (
     <div className="App">
       <Header />
       <hr/>
+      <div className="App">
+        <button onClick={getLocation}>Get Location</button>
+        <p>{status}</p>
+        {lat && <p>Latitude: {lat}</p>}
+        {lon && <p>Longitude: {lon}</p>}
+        <hr />
+      </div>
       <Container className='main'>
         <Row>
           <Col>

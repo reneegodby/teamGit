@@ -21,7 +21,7 @@ const NasaApi = () => {
 
 
     return(
-<div>test</div>
+<div></div>
     )
 }
 
