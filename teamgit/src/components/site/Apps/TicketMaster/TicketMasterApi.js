@@ -1,76 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Header } from 'reactstrap';
-import styled from 'styled-components';
+import { Button, Row } from 'reactstrap';
 
-const Header = styled.header`text-align: center;`;
+// const baseURL = 'https://app.ticketmaster.com/discovery/v2/attractions?apikey=88z2tPAlc9NBSPwRrPqEoyx7EmX8nqyT&latlong=40.0542448,-85.9508923&locale=*'
 
-const baseUrl = 'https://app.ticketmaster.com/discovery/v2/attractions';
-const key = '88z2tPAlc9NBSPwRrPqEoyx7EmX8nqyT'
-
-// need to make a fetch function that will take in the lat and lon prop from Renee's NASA API and return the results
+// const key = '88z2tPAlc9NBSPwRrPqEoyx7EmX8nqyT'
 
 /*function*/
 
 const TicketMasterApi = (props) => {
 
-    const [results, setResults] = useState('');
-    const [sports, setSports] = useState('');
-    const [concerts, setConcerts] = useState('');
-    const [theater, setTheater] = useState('');
-    const [otherEvents, setOtherEvents] = useState('');
-    
-    const fetchResults = (url) => {
-        let url = ``; //Need to work on this to pull from NASA API
+    const [results, setResults] = useState(null);
+    console.log(results);
+    const fetchResults = () => {
+        let url = 'https://app.ticketmaster.com/discovery/v2/events?apikey=88z2tPAlc9NBSPwRrPqEoyx7EmX8nqyT&latlong=40.0542448,-85.9508923&locale=*';
 
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setResults(data.results);
-                setSports(data.sports);
-                setConcerts(data.concerts);
-                setTheater(data.theater);
-                setOtherEvents(data.otherEvents);
+                setResults(data._embedded.events);
                 console.log(data)
             })
             .catch(err => console.log(err))
     }
 
-    Button.onClick = () => {
-        fetchResults();
-    }
-
-    useEffect(() => {
-        fetchResults();
-    }, [])
-
     return (
         <div>
-            <Header>Events in {results}</Header>
-
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <h1>TicketMaster</h1>
-                <hr />
-                <h2>Sports</h2>
-                <h3>{sports.name}</h3>
-                <hr />
-                <h2>Concerts</h2>
-                <h3>{concerts.name}</h3>
-                <hr />
-                <h2>Stage Shows</h2>
-                <h3>{theater.name}</h3>
-                <hr />
-                <h2>Other</h2>
-                <h3>{otherEvents.name}</h3>
+            <Row><h1>TicketMaster</h1>
                 <hr />
                 <Button onClick={fetchResults}>Search</Button>
                 <hr />
-                <ul>
-                    {results.map(result => (
-                        <li>{result.name}</li>
-                    ))}
-                </ul>
+                {results?.map(result => (
+                    <p>{result.name}</p>
+                ))}</Row>
             </div>
         </div>
     )
 }
+
 export default TicketMasterApi;
