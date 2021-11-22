@@ -20,14 +20,16 @@ const TicketMasterApi = (props) => {
                 console.log(data)
             })
             .catch(err => console.log(err))
-    }
-
+}
+    useEffect(() => {
+        fetchResults();
+    });
     return (
         <div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Row><h1>TicketMaster</h1>
                 <hr />
-                <Button onClick={fetchResults}>Search</Button>
+                {/* <Button onClick={fetchResults}>Search</Button> */}
                 <hr />
                 {results?.map(result => (
                     <p>{result.name}</p>
