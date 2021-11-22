@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Button, Row, ModalHeader } from 'reactstrap'
 import styled from "styled-components";
 
@@ -36,12 +36,16 @@ const WeatherApi = (props) => {
             .catch(err => console.log(err));
     }
 
+    useEffect(() => {
+        fetchWeather();
+    });
+
     const toggle = () => setUnit(unit => !unit);
 
     return(
         <div>
             <Header>Weather in {name}</Header>
-            <Button onClick={fetchWeather}>fetch Weather</Button>
+            {/* <Button onClick={fetchWeather}>fetch Weather</Button> */}
             <hr />
             <Row><h6>Temperature: {unit ? Math.round(temp) : Math.round((temp - 32) / 1.8)}° <Button onClick={toggle}>Convert</Button></h6></Row>
             <hr />
