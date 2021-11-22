@@ -6,7 +6,7 @@ import Header from './components/site/Header';
 import NasaApi  from './components/site/Apps/NASA/NasaApi';
 import TicketMasterApi from './components/site/Apps/TicketMaster/TicketMasterApi';
 import WeatherApi from './components/site/Apps/Weather/WeatherApi';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import logo from './logo.svg';
 import './App.css';
@@ -37,8 +37,7 @@ function App() {
     getLocation();
   }, []);
   
-
-  return (
+    return (
     <div className="App">
 
       <Header />
@@ -56,8 +55,7 @@ function App() {
           <h3><WeatherApi lat={lat} lon={lon}/></h3>
           </Col>
           <Col>
-          <h2>NASA API</h2>
-          <NasaApi lat={lat} lon={lon}/>
+          <h3><NasaApi lat={lat} lon={lon}/></h3>
           </Col>
           <Col>
           <h2>Ticketmaster API</h2>
