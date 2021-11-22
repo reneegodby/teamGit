@@ -5,18 +5,16 @@ import styled from "styled-components";
 const Img = styled.img`
   height: 350px;
   width: 350px;
+  object-align: center;
 `;
 
 const baseUrl = "https://api.nasa.gov/planetary/earth/imagery";
 const key = "axnei6Bx1WjoXq8EXkYZRdUznhudstUwKzTFfBoE";
 
 const NasaApi = (props) => {
-  const [results, setResults] = useState({});
+  const [results, setResults] = useState(null);
 
-  // React.useEffect(() => {
-  // window.addEventListener('load', function () {
-
-  const fetchImage = () => {
+   const fetchImage = () => {
     let url = `${baseUrl}?lon=${props.lon}&lat=${props.lat}&date=2014-01-01&dim=0.15&api_key=${key}`;
     fetch(url)
       .then((res) => res)
@@ -27,9 +25,15 @@ const NasaApi = (props) => {
       .catch((err) => console.log(err));
   };
 
+  useEffect(() => {
+      fetchImage();
+  });
+
   return (
     <div>
-      <Button onClick={fetchImage}>fetch Img</Button>
+        <header>Satellite Image</header>
+      {/* <Button onClick={fetchImage}>fetch Img</Button> */}
+      <hr />
       <Img src={results} alt={results}></Img>
     </div>
   );
