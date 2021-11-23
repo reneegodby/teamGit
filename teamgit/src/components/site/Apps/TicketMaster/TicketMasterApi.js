@@ -33,11 +33,24 @@ const TicketMasterApi = (props) => {
     const content =
         results.length < 1 ? (<div>Nothing in your area</div>) : (
             <div>
-                {results[0].name}
+                <h4>{results[0].name}</h4>
                 <br />
-                {results[1].name}
+                {results[0].dates.start.localDate}
                 <br />
-                {results[2].name}
+                {results[0]._embedded.venues[0].name}
+                <hr />
+                <h4>{results[1].name}</h4>
+                <br />
+                {results[1].dates.start.localDate}
+                <br />
+                {results[1]._embedded.venues[0].name}
+                <br />
+                <hr />
+                <h4>{results[2].name}</h4>
+                <br />
+                {results[2].dates.start.localDate}
+                <br />
+                {results[2]._embedded.venues[0].name}
             </div>
         )
 
