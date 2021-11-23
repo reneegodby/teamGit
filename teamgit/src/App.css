@@ -64,7 +64,7 @@ footer p {
 }
 
 .title {
-  background-color:#FFF1DE;
+  background-color: rgb(250, 128, 114, .40);
   padding: 10px;
   border: 1px solid black;
   box-shadow: 5px 5px 5px #282c34;
