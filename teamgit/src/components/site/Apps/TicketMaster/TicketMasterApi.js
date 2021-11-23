@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row } from 'reactstrap';
+import { Row, Button } from 'reactstrap';
 
 // const baseURL = 'https://app.ticketmaster.com/discovery/v2/attractions?apikey=88z2tPAlc9NBSPwRrPqEoyx7EmX8nqyT&latlong=40.0542448,-85.9508923&locale=*'
 // const key = '88z2tPAlc9NBSPwRrPqEoyx7EmX8nqyT'
@@ -27,8 +27,8 @@ const TicketMasterApi = (props) => {
     return (
         <div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Row><h1>TicketMaster</h1>
-                <hr />
+            <Row><h1 >TicketMaster</h1>
+                
                 {/* <Button onClick={fetchResults}>Search</Button> */}
                 <hr />
                 {results?.map(result => (

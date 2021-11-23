@@ -44,7 +44,7 @@ function App() {
       <div className="App">
         <div className="Coordinates">
           <p>{status}</p>
-          {lat && <p>Latitude: {lat}-- </p>}
+          {lat && <p>Latitude: {lat}* </p>}
           {lon && <p>Longitude: {lon}</p>}
         </div>
       </div>
@@ -62,16 +62,8 @@ function App() {
             </h3>
           </Col>
           <Col className="column">
-            <h2>Ticketmaster API</h2>
-          <Col className='border'>
-          <h3><WeatherApi lat={lat} lon={lon}/></h3>
-          </Col>
-          <Col className='border'>
-          <h3><NasaApi lat={lat} lon={lon}/></h3>
-          </Col>
-          <Col className='border'>
-          <h2>Ticketmaster API</h2>
-          <TicketMasterApi />
+            <h3>Ticketmaster API</h3>
+            <TicketMasterApi />
           </Col>
         </Row>
       </Container>
