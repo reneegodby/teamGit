@@ -6,7 +6,7 @@
 
 /* border style */
 .border{
-  border: solid black 2px;
+  border: 2px solid rgb(0, 0, 0);
   margin: 20px;
 }
 

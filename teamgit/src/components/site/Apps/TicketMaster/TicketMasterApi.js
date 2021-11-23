@@ -29,7 +29,7 @@ const TicketMasterApi = (props) => {
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Row><h1>TicketMaster</h1>
                 <hr />
-                {/* <Button onClick={fetchResults}>Search</Button> */}
+                {/* <button onClick={fetchResults}>Search</button> */}
                 <hr />
                 {results?.map(result => (
                     <p>{result.name}</p>
