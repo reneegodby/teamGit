@@ -36,7 +36,9 @@ const TicketMasterApi = (props) => {
                 <Row><Header>Events Near You</Header>
                     <hr />
                     {results?.map(result => (
-                        <h6>{result.name}</h6>
+                        <h6>
+                            {result.name}
+                        </h6>
                     ))}
                     </Row>
             </div>
