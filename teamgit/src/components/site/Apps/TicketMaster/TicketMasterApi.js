@@ -32,13 +32,11 @@ const TicketMasterApi = (props) => {
 
     return (
         <div>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Row><Header>Events Near You</Header>
+            <div style={{/* display: 'flex', justifyContent: 'center', alignItems: 'center'*/}}>
+                <Header>Events Near You</Header>
                     <hr />
-                    {results?.map(result => (
-                        <h6>
-                            {result.name}
-                        </h6>
+                    <Row>{results?.map(result => (
+                        <h6>{result.name}</h6>
                     ))}
                     </Row>
             </div>
