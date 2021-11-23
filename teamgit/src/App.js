@@ -51,25 +51,14 @@ function App() {
       <hr />
       <Container className="main">
         <Row>
-          <Col className="column">
-            <h3>
-              <WeatherApi lat={lat} lon={lon} />
-            </h3>
-          </Col>
-          <Col className="column">
-            <h3>
-              <NasaApi lat={lat} lon={lon} />
-            </h3>
-          </Col>
-          <Col className="column">
-            <h2>Ticketmaster API</h2>
-          <Col className='border'>
+
+          <Col  className='border'>
           <h3><WeatherApi lat={lat} lon={lon}/></h3>
           </Col>
           <Col className='border'>
           <h3><NasaApi lat={lat} lon={lon}/></h3>
           </Col>
-          <Col className='border'>
+          <Col  className='border'>
           <h2>Ticketmaster API</h2>
           <TicketMasterApi />
           </Col>
