@@ -58,6 +58,8 @@ function App() {
           <Col className='border'>
           <h3><NasaApi lat={lat} lon={lon}/></h3>
           </Col>
+          <Col>
+          <h3><TicketMasterApi lat={lat} lon={lon}/></h3>
           <Col  className='border'>
           <h2>Ticketmaster API</h2>
           <TicketMasterApi />
