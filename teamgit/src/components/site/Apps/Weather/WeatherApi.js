@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Button, Row, ModalHeader } from 'reactstrap'
+import { Button, Row } from 'reactstrap'
 import styled from "styled-components";
 
 const Header = styled.header`
