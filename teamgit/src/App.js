@@ -21,7 +21,7 @@ function App() {
       setStatus("Locating...");
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setStatus(null);
+          setStatus('');
           setLat(position.coords.latitude);
           setLon(position.coords.longitude);
         },
@@ -44,21 +44,27 @@ function App() {
       <div className="App">
         <div className="Coordinates">
           <p>{status}</p>
-          {lat && <p>Latitude: {lat}| </p>}
+          {lat && <p>Latitude: {lat}|| </p>}
           {lon && <p>Longitude: {lon}</p>}
         </div>
       </div>
       <hr />
       <Container className="main">
         <Row>
-          <Col  className='border'>
-          <h3><WeatherApi lat={lat} lon={lon}/></h3>
+          <Col className="border" id="box">
+            <h3>
+              <WeatherApi lat={lat} lon={lon} />
+            </h3>
           </Col>
-          <Col className='border'>
-          <h3><NasaApi lat={lat} lon={lon}/></h3>
+          <Col className="border" id="box2">
+            <h3>
+              <NasaApi lat={lat} lon={lon} />
+            </h3>
           </Col>
-          <Col  className='border'>
-          <h3><TicketMasterApi lat={lat} lon={lon}/></h3>
+          <Col className="border" id="box3">
+            <h3>
+              <TicketMasterApi lat={lat} lon={lon} />
+            </h3>
           </Col>
         </Row>
       </Container>
