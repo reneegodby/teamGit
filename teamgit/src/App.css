@@ -4,6 +4,13 @@
   background-color: #D5E5F2;
 }
 
+/* border style */
+.border{
+  border: solid black 2px;
+  margin: 20px;
+}
+
+
 /* body */
 body {
   padding: 15px;
