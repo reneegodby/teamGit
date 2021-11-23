@@ -58,7 +58,9 @@ function App() {
           <h3><NasaApi lat={lat} lon={lon}/></h3>
           </Col>
           <Col>
-          <h3><TicketMasterApi lat={lat} lon={lon}/></h3>
+          <h3>
+            <TicketMasterApi lat={lat} lon={lon}/>
+            </h3>
           </Col>
         </Row>
         
