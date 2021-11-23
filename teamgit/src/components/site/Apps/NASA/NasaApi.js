@@ -4,11 +4,15 @@ import styled from "styled-components";
 const Img = styled.img`
   height: 20vw;
   width: 20vw;
-  object-align: center;
-  border-radius: 500px;
+  border-radius: 5%;
   border: 2px solid black;
   padding: 2px;
   box-shadow: 5px 5px 5px #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vw;
+  
 `;
 
 const baseUrl = "https://api.nasa.gov/planetary/earth/imagery";
@@ -36,7 +40,7 @@ const NasaApi = (props) => {
     <div>
         <header className='title'>Satellite Image of Location</header>
       <hr />
-      <Img src={results} alt={results}></Img>
+      <Img src={results} alt={results} ></Img>
     </div>
   );
 };

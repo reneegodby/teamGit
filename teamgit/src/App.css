@@ -1,35 +1,38 @@
 
 .App {
   text-align: center;
-  background-color: #D5E5F2;
+  /* background-color: rgb(180, 220, 255, 0.5); */
+  background-color: #F0FAFF;
+
 }
 
 /* border style */
 .border {
-  border: solid black 2px;
-  margin: 20px;
+  border: solid black 2px!important;
+  margin: 20px!important;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 2px;
 }
 
 
 /* body */
 body {
   padding: 15px;
-  background-color: #D5E5F2;
-  font: Belleza;
+  background-color: #F0FAFF;
+  
 }
 
 /* footer */
 footer {
-  background-color: #FFD69D;
-  color: white;
-  margin-top: 10px;
+  background-color: #86C6FF;
   border: 1px solid #282c34;
   box-shadow: 5px 5px 5px #282c34;
 }
 
 footer p {
-  margin-top: 0.em!important;
-  margin-left: 1.5em;
+  font-weight:bold ;
+  /* margin-left: 1.5em; */
   color: black;
   text-align: center;
   
@@ -37,7 +40,7 @@ footer p {
 
 /* main */
 .main {
-  background-color: #D5E5F2;
+  background-color: #F0FAFF;
   color: black;
   height: 100%;
 }
@@ -46,11 +49,17 @@ footer p {
 /* header */
 .header {
   margin-top: 0.5em!important;
-  /* text-align: center!important; */
-  background-color: #8685c5;
-  color: white;
+  background-color: #86C6FF;
+  color: black;
   border: 1px solid #282c34;
   box-shadow: 5px 5px 5px #282c34;
+}
+
+#box, #box2, #box3 {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  
 }
 
 .Coordinates {
@@ -59,15 +68,15 @@ footer p {
   justify-content: center;
   font-weight: bold;
   font-size: large;
-  
-  
+  margin-top: 2vw;  
 }
 
 .title {
-  background-color: rgb(250, 128, 114, .40);
-  padding: 10px;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px #282c34;
+  background-color: #5CB1FD;
+  padding: 20px;
+  /* border: 1px double black; */
+  /* box-shadow: 5px 5px 5px #282c34; */
+  border-radius: 10px;
   
 }
 
