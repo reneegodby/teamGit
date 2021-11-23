@@ -44,7 +44,7 @@ function App() {
       <div className="App">
         <div className="Coordinates">
           <p>{status}</p>
-          {lat && <p>Latitude: {lat}-- </p>}
+          {lat && <p>Latitude: {lat}| </p>}
           {lon && <p>Longitude: {lon}</p>}
         </div>
       </div>
