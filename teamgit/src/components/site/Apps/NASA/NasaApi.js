@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "reactstrap";
 import styled from "styled-components";
 
 const Img = styled.img`
-  height: 350px;
-  width: 350px;
+  height: 20vw;
+  width: 20vw;
   object-align: center;
+  border-radius: 500px;
+  border: 2px solid black;
+  padding: 2px;
 `;
 
 const baseUrl = "https://api.nasa.gov/planetary/earth/imagery";
@@ -31,8 +33,7 @@ const NasaApi = (props) => {
 
   return (
     <div>
-        <header>Satellite Image</header>
-      {/* <Button onClick={fetchImage}>fetch Img</Button> */}
+        <header>Satellite Image of Location</header>
       <hr />
       <Img src={results} alt={results}></Img>
     </div>
