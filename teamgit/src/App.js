@@ -51,13 +51,13 @@ function App() {
       </div>
       <Container className='main'>
         <Row>
-          <Col>
+          <Col className='border'>
           <h3><WeatherApi lat={lat} lon={lon}/></h3>
           </Col>
-          <Col>
+          <Col className='border'>
           <h3><NasaApi lat={lat} lon={lon}/></h3>
           </Col>
-          <Col>
+          <Col className='border'>
           <h2>Ticketmaster API</h2>
           <TicketMasterApi />
           </Col>
