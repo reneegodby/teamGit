@@ -13,7 +13,7 @@ const Header = styled.header`
 
 const TicketMasterApi = (props) => {
 
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState('');
     console.log(results);
     const fetchResults = () => {
         let url = `${baseURL}?apikey=${key}&latlong=${props.lat},${props.lon}&locale=*`;
@@ -30,15 +30,27 @@ const TicketMasterApi = (props) => {
         fetchResults();
     });
 
+    const content =
+        results.length < 1 ? (<div>Nothing in your area</div>) : (
+            <div>
+                {results[0].name}
+                <br />
+                {results[1].name}
+                <br />
+                {results[2].name}
+            </div>
+        )
+
     return (
         <div>
-            <div style={{/* display: 'flex', justifyContent: 'center', alignItems: 'center'*/}}>
+            <div style={{/* display: 'flex', justifyContent: 'center', alignItems: 'center'*/ }}>
                 <Header>Events Near You</Header>
-                    <hr />
-                    <Row>{results?.map(result => (
+                <hr />
+                {/* <Row>{results?.map(result => (
                         <h6>{result.name}</h6>
                     ))}
-                    </Row>
+                    </Row> */}
+                <Row><h5>{content}</h5></Row>
             </div>
         </div>
     )
