@@ -8,6 +8,7 @@ const Img = styled.img`
   border-radius: 500px;
   border: 2px solid black;
   padding: 2px;
+  box-shadow: 5px 5px 5px #282c34;
 `;
 
 const baseUrl = "https://api.nasa.gov/planetary/earth/imagery";
@@ -33,7 +34,7 @@ const NasaApi = (props) => {
 
   return (
     <div>
-        <header>Satellite Image of Location</header>
+        <header className='title'>Satellite Image of Location</header>
       <hr />
       <Img src={results} alt={results}></Img>
     </div>

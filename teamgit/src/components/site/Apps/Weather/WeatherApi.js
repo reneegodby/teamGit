@@ -47,7 +47,7 @@ const WeatherApi = (props) => {
     
     return(
         <div>
-            <Header>Weather in {name}</Header>
+            <Header className='title'>Weather in {name}</Header>
             {/* <Button onClick={fetchWeather}>fetch Weather</Button> */}
             <hr />
             <Row><h6>Temperature:{unit ? Math.round(temp)+far : Math.round((temp - 32) / 1.8)+Cel } <Button onClick={toggle}>Convert</Button></h6></Row>
